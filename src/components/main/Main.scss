@@ -67,7 +67,7 @@
     padding-bottom: 1rem;
   }
   &__comment-icon {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     height: 2.25rem;
     width: 2.25rem;
     background-image: url("../../assets/images/Mohan-muruge.jpg");
@@ -76,7 +76,7 @@
     border-radius: 50%;
   }
   &__comment-form {
-    width: 85%;
+    width: 90%;
   }
   &__input {
     padding-bottom: 1rem;
@@ -126,7 +126,7 @@
     background-color: colors.$Divider-LineColor;
   }
   &__text-right {
-    width: 85%;
+    width: 90%;
   }
   &__upper-text {
     display: flex;

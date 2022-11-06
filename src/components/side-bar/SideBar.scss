@@ -1,0 +1,44 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+
+.videoList {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: colors.$Secondary-TextColor;
+    @include mobile-subHeader;
+    padding: 1rem 0;
+  }
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 1rem;
+  }
+  &__image-container {
+    width: 25%;
+    height: 6rem;
+    border-radius: 0.25rem;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+  }
+  &__video-text {
+    width: 70%;
+  }
+  &__video-title {
+    @include mobile-subHeader;
+    color: colors.$Primary-TextColor;
+  }
+  &__channel {
+    @include mobile-body;
+    color: colors.$Primary-TextColor;
+  }
+}
