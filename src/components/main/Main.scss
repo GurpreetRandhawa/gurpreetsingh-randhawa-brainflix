@@ -5,12 +5,21 @@
 
 .mainCon {
   margin: 1.5rem 1rem 0rem 1rem;
+  @include medium {
+    margin: 1.5rem;
+  }
 
   &__title {
     @include mobile-pageHeader;
     padding-bottom: 1rem;
     color: colors.$Primary-TextColor;
     border-bottom: 1px solid colors.$Divider-LineColor;
+
+    @include medium {
+      @include td-pageHeader;
+      border: none;
+      padding-bottom: 0;
+    }
   }
 
   &__videoInfo {
@@ -19,25 +28,52 @@
     justify-content: space-between;
     padding-bottom: 1rem;
     border-bottom: 1px solid colors.$Divider-LineColor;
+
+    @include medium {
+      padding-bottom: 0;
+    }
   }
   &__author-time {
+    @include medium {
+      width: 28%;
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__author {
     @include mobile-subHeader;
     padding-bottom: 1rem;
     color: colors.$Primary-TextColor;
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__time {
     color: colors.$Secondary-TextColor;
     @include mobile-subHeader;
+
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__views-likes {
     padding-right: 3rem;
+    @include medium {
+      display: flex;
+      width: 30%;
+      justify-content: space-between;
+      padding-right: 0;
+    }
   }
   &__views-icon {
     @include mobile-subHeader;
     color: colors.$Secondary-TextColor;
     padding-bottom: 1rem;
+
+    @include medium {
+      @include td-subHeader;
+      padding-bottom: 0;
+    }
   }
   &__views {
     padding-right: 0.5rem;
@@ -45,6 +81,10 @@
   &__likes-icon {
     @include mobile-subHeader;
     color: colors.$Secondary-TextColor;
+
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__likes {
     padding-right: 0.5rem;
@@ -53,18 +93,31 @@
     padding-top: 1rem;
     color: colors.$Primary-TextColor;
     @include mobile-body;
+
+    @include medium {
+      @include td-body;
+      padding-top: 1.5rem;
+    }
   }
   &__total-comments {
     padding-top: 1.5rem;
     color: colors.$Primary-TextColor;
     @include mobile-subHeader;
     padding-bottom: 1rem;
+    @include medium {
+      @include td-subHeader;
+      padding-bottom: 1.5rem;
+    }
   }
   &__comment-box {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid colors.$Divider-LineColor;
     padding-bottom: 1rem;
+
+    @include medium {
+      padding-bottom: 1.5rem;
+    }
   }
   &__comment-icon {
     margin-top: 1.5rem;
@@ -74,17 +127,36 @@
     background-position: left;
     background-size: cover;
     border-radius: 50%;
+
+    @include medium {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
   &__comment-form {
     width: 90%;
+
+    @include medium {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__input {
     padding-bottom: 1rem;
+    @include medium {
+      padding-bottom: 0;
+      width: 70%;
+    }
   }
   &__label {
     color: colors.$Secondary-TextColor;
     @include mobile-subHeader;
     padding-bottom: 0.25rem;
+
+    @include medium {
+      @include td-subHeader;
+      padding-bottom: 0.5rem;
+    }
   }
   &__input-box {
     background-color: colors.$Form-fieldBackground;
@@ -96,6 +168,14 @@
     &::placeholder {
       color: colors.$Video-playerComponents;
       @include mobile-body;
+
+      @include medium {
+        @include td-body;
+      }
+    }
+    @include medium {
+      width: 100%;
+      height: 2rem;
     }
   }
   &__com-button {
@@ -108,6 +188,11 @@
     color: colors.$Background-Color;
     padding: 0 2rem;
     @include mobile-labels;
+
+    @include medium {
+      width: 25%;
+      transform: translateY(58%);
+    }
   }
   &__button-image {
     position: absolute;
@@ -118,12 +203,21 @@
     justify-content: space-between;
     border-bottom: 1px solid colors.$Divider-LineColor;
     padding: 1rem 0;
+
+    @include medium {
+      padding: 1.5rem 0;
+    }
   }
   &__blank-image {
     width: 2.25rem;
     height: 2.25rem;
     border-radius: 50%;
     background-color: colors.$Divider-LineColor;
+
+    @include medium {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
   &__text-right {
     width: 90%;
@@ -136,12 +230,25 @@
     @include mobile-subHeader;
     color: colors.$Primary-TextColor;
     padding-bottom: 0.5rem;
+
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__comm-time {
     @include mobile-subHeader;
     color: colors.$Secondary-TextColor;
+
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__comm-full {
     @include mobile-body;
+    text-align: justify;
+
+    @include medium {
+      @include td-body;
+    }
   }
 }

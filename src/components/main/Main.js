@@ -48,7 +48,7 @@ export default function Main({ video }) {
           </div>
           <button className="mainCon__com-button">
             <img className="mainCon__button-image" src={comment} alt="" />
-            {/* <div className="mainCon__button-text">Comment</div> */}COMMENT
+            COMMENT
           </button>
         </div>
       </div>

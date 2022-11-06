@@ -4,41 +4,72 @@
 @import "../../styles/partials/mixins";
 
 .videoList {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+
+  @include medium {
+    padding: 0rem 1.5rem;
+  }
 
   &__title {
     color: colors.$Secondary-TextColor;
     @include mobile-subHeader;
     padding: 1rem 0;
+
+    @include medium {
+      @include td-subHeader;
+      padding-bottom: 1.5rem;
+    }
   }
   &__list {
     width: 100%;
     display: flex;
     justify-content: space-between;
-
     padding-bottom: 1rem;
+
+    @include medium {
+      padding-bottom: 1.5rem;
+      justify-content: flex-start;
+    }
   }
   &__image-container {
-    width: 25%;
+    width: 35%;
     height: 6rem;
     border-radius: 0.25rem;
+
+    @include medium {
+      width: 30%;
+      height: 7rem;
+      padding-right: 1rem;
+    }
   }
   &__image {
     width: 100%;
     height: 100%;
     border-radius: 0.25rem;
+    padding-right: 0;
   }
   &__video-text {
-    width: 70%;
+    width: 60%;
+
+    @include medium {
+      width: 40%;
+    }
   }
   &__video-title {
     @include mobile-subHeader;
     color: colors.$Primary-TextColor;
+    @include medium {
+      @include td-subHeader;
+    }
   }
   &__channel {
     @include mobile-body;
     color: colors.$Primary-TextColor;
+
+    @include medium {
+      @include td-body;
+    }
   }
 }

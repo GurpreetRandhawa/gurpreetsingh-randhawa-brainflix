@@ -32,25 +32,10 @@
 
 // Desktop and Tablets text
 
-@mixin hero-header {
-  font-size: 3.75rem;
-  line-height: 4.25rem;
-}
-
 @mixin td-pageHeader {
   font-size: 2.0625rem;
   line-height: 2.75rem;
   font-weight: 700;
-}
-
-@mixin header-one {
-  font-size: 2.25rem;
-  line-height: 2.75rem;
-}
-
-@mixin header-two {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 @mixin td-sectionHeader {
@@ -69,11 +54,6 @@
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 400;
-}
-
-@mixin list {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 @mixin td-labels {
