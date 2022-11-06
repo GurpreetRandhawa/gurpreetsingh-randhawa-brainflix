@@ -1,6 +1,7 @@
 import "./App.scss";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
+import Main from "./components/main/Main";
 import { useState } from "react";
 import getVideoDetails, { getVideos } from "./utils/utils";
 
@@ -21,6 +22,7 @@ function App() {
     <>
       <Header />
       <Hero video={videoDetails} />
+      <Main video={videoDetails} />
     </>
   );
 }

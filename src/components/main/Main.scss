@@ -1,0 +1,147 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+
+.mainCon {
+  margin: 1.5rem 1rem 0rem 1rem;
+
+  &__title {
+    @include mobile-pageHeader;
+    padding-bottom: 1rem;
+    color: colors.$Primary-TextColor;
+    border-bottom: 1px solid colors.$Divider-LineColor;
+  }
+
+  &__videoInfo {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid colors.$Divider-LineColor;
+  }
+  &__author-time {
+  }
+  &__author {
+    @include mobile-subHeader;
+    padding-bottom: 1rem;
+    color: colors.$Primary-TextColor;
+  }
+  &__time {
+    color: colors.$Secondary-TextColor;
+    @include mobile-subHeader;
+  }
+  &__views-likes {
+    padding-right: 3rem;
+  }
+  &__views-icon {
+    @include mobile-subHeader;
+    color: colors.$Secondary-TextColor;
+    padding-bottom: 1rem;
+  }
+  &__views {
+    padding-right: 0.5rem;
+  }
+  &__likes-icon {
+    @include mobile-subHeader;
+    color: colors.$Secondary-TextColor;
+  }
+  &__likes {
+    padding-right: 0.5rem;
+  }
+  &__descrip {
+    padding-top: 1rem;
+    color: colors.$Primary-TextColor;
+    @include mobile-body;
+  }
+  &__total-comments {
+    padding-top: 1.5rem;
+    color: colors.$Primary-TextColor;
+    @include mobile-subHeader;
+    padding-bottom: 1rem;
+  }
+  &__comment-box {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid colors.$Divider-LineColor;
+    padding-bottom: 1rem;
+  }
+  &__comment-icon {
+    margin-top: 1rem;
+    height: 2.25rem;
+    width: 2.25rem;
+    background-image: url("../../assets/images/Mohan-muruge.jpg");
+    background-position: left;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  &__comment-form {
+    width: 85%;
+  }
+  &__input {
+    padding-bottom: 1rem;
+  }
+  &__label {
+    color: colors.$Secondary-TextColor;
+    @include mobile-subHeader;
+    padding-bottom: 0.25rem;
+  }
+  &__input-box {
+    background-color: colors.$Form-fieldBackground;
+    border: 1px solid colors.$Divider-LineColor;
+    width: 100%;
+    height: 6rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    &::placeholder {
+      color: colors.$Video-playerComponents;
+      @include mobile-body;
+    }
+  }
+  &__com-button {
+    width: 100%;
+    position: relative;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    background-color: colors.$Primary-CtaColor;
+    border: none;
+    color: colors.$Background-Color;
+    padding: 0 2rem;
+    @include mobile-labels;
+  }
+  &__button-image {
+    position: absolute;
+    left: 1rem;
+  }
+  &__comm-list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid colors.$Divider-LineColor;
+    padding: 1rem 0;
+  }
+  &__blank-image {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: colors.$Divider-LineColor;
+  }
+  &__text-right {
+    width: 85%;
+  }
+  &__upper-text {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__comm-name {
+    @include mobile-subHeader;
+    color: colors.$Primary-TextColor;
+    padding-bottom: 0.5rem;
+  }
+  &__comm-time {
+    @include mobile-subHeader;
+    color: colors.$Secondary-TextColor;
+  }
+  &__comm-full {
+    @include mobile-body;
+  }
+}
