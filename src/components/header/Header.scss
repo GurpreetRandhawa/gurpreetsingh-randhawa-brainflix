@@ -1,2 +1,139 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+
 .header {
+  &__container {
+    margin: 1rem;
+
+    @include medium {
+      margin: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include large {
+      margin: 1.5rem 5rem;
+    }
+  }
+  &__logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include medium {
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 0;
+      width: 20%;
+    }
+  }
+  &__logo {
+    width: 7.5rem;
+    height: 1.5625rem;
+  }
+  &__searchbar-mohan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    @include medium {
+      margin-bottom: 0;
+      display: inline-block;
+      width: 38%;
+    }
+    @include large {
+      width: 25%;
+      margin-right: -15rem;
+    }
+  }
+  &__searchbar {
+    display: flex;
+    align-items: center;
+    border: 1px solid colors.$Divider-LineColor;
+    background-color: colors.$Form-fieldBackground;
+    border-radius: 0.25rem;
+    height: 2.25rem;
+    width: 88%;
+    padding-left: 1rem;
+
+    @include medium {
+      height: 2.5rem;
+      width: 100%;
+    }
+  }
+  &__search-icon {
+    padding-right: 1rem;
+  }
+  &__search-text {
+    @include mobile-body;
+    color: colors.$Video-playerComponents;
+
+    @include medium {
+      @include td-body;
+    }
+  }
+  &__search-mohan {
+    height: 2.25rem;
+    width: 2.25rem;
+    background-image: url("../../assets/images/Mohan-muruge.jpg");
+    background-position: left;
+    background-size: cover;
+    border-radius: 50%;
+
+    @include medium {
+      display: none;
+    }
+  }
+  &__uploadbar {
+    display: flex;
+
+    @include medium {
+      width: 30%;
+      justify-content: space-between;
+    }
+    @include large {
+      width: 20%;
+    }
+  }
+  &__upload {
+    display: flex;
+    align-items: center;
+    height: 2.25rem;
+    position: relative;
+    width: 100%;
+    background-color: colors.$Primary-CtaColor;
+    border-radius: 0.25rem;
+
+    @include medium {
+      width: 75%;
+      height: 2.5rem;
+    }
+  }
+  &__upload-icon {
+    padding-left: 1rem;
+  }
+  &__upload-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: colors.$Background-Color;
+    @include mobile-subHeader;
+
+    @include medium {
+      @include td-subHeader;
+    }
+  }
+  &__upload-mohan {
+    @include medium {
+      height: 2.5rem;
+      width: 2.5rem;
+      background-image: url("../../assets/images/Mohan-muruge.jpg");
+      background-position: left;
+      background-size: cover;
+      border-radius: 50%;
+    }
+  }
 }

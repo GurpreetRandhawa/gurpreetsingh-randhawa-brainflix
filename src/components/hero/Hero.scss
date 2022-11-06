@@ -1,0 +1,88 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+.hero {
+  height: 55vw;
+  position: relative;
+
+  @include medium {
+    height: 50vw;
+    background-color: colors.$Video-playerComponents;
+  }
+
+  @include large {
+    height: 35rem;
+  }
+  &__video-player {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include medium {
+      padding: 0 1.5rem;
+    }
+
+    @include large {
+      padding: 0 10rem;
+    }
+  }
+  &__video-controls {
+    position: absolute;
+    z-index: 2;
+    bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 1rem 0 1rem;
+    width: 93%;
+    @include medium {
+      margin: 0 1.5rem 0 1.5rem;
+    }
+    @include large {
+      margin: 0 11rem 0 11rem;
+    }
+  }
+  &__play {
+    height: 2rem;
+    width: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+  }
+  &__bar {
+    height: 2rem;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__bar-progress {
+    width: 75%;
+    height: 0.25rem;
+    background-color: colors.$Video-playerComponents;
+  }
+  &__bar-time {
+    color: colors.$Background-Color;
+    @include mobile-body;
+
+    @include medium {
+      @include td-body;
+    }
+  }
+  &__controls {
+    height: 2rem;
+    width: 15%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @include medium {
+      width: 19%;
+    }
+  }
+}
