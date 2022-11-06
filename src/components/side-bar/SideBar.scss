@@ -11,6 +11,9 @@
   @include medium {
     padding: 0rem 1.5rem;
   }
+  @include large {
+    border-left: 1px solid colors.$Divider-LineColor;
+  }
 
   &__title {
     color: colors.$Secondary-TextColor;
@@ -20,6 +23,9 @@
     @include medium {
       @include td-subHeader;
       padding-bottom: 1.5rem;
+    }
+    @include large {
+      padding-top: 2.25rem;
     }
   }
   &__list {
@@ -43,6 +49,9 @@
       height: 7rem;
       padding-right: 1rem;
     }
+    @include large {
+      height: 3rem;
+    }
   }
   &__image {
     width: 100%;
@@ -55,6 +64,9 @@
 
     @include medium {
       width: 40%;
+    }
+    @include large {
+      width: 50%;
     }
   }
   &__video-title {

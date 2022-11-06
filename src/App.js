@@ -23,8 +23,10 @@ function App() {
     <>
       <Header />
       <Hero video={videoDetails} />
-      <Main video={videoDetails} />
-      <SideBar videos={videos} onClick={handleClick} />
+      <section className="dividing-container">
+        <Main video={videoDetails} />
+        <SideBar videos={videos} onClick={handleClick} />
+      </section>
     </>
   );
 }

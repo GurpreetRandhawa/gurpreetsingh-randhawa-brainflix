@@ -1,4 +1,6 @@
 @use "./styles/partials/fonts";
+@import "./styles/partials/breakpoints";
+@import "./styles/partials/mixins";
 
 body {
   max-width: 100vw;
@@ -10,7 +12,11 @@ body {
   box-sizing: border-box;
   font-size: 16px;
 }
-
+.dividing-container {
+  @include large {
+    display: flex;
+  }
+}
 *,
 *::before,
 *::after {
