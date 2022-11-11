@@ -12,11 +12,7 @@ body {
   box-sizing: border-box;
   font-size: 16px;
 }
-.dividing-container {
-  @include large {
-    display: flex;
-  }
-}
+
 *,
 *::before,
 *::after {

@@ -1,0 +1,9 @@
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+
+.dividing-container {
+  @include large {
+    display: flex;
+  }
+}

@@ -1,33 +1,18 @@
 import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Main from "./components/main/Main";
-import SideBar from "./components/side-bar/SideBar";
-import { useState } from "react";
-import getVideoDetails, { getVideos } from "./utils/utils";
+import HomePage from "./Page/HomePage/HomePage";
 
 function App() {
-  const [videoId, setVideoId] = useState(
-    "84e96018-4022-434e-80bf-000ce4cd12b8"
-  );
-  const [videos, setVideos] = useState(getVideos(videoId));
-  const [videoDetails, setVideoDetails] = useState(getVideoDetails(videoId));
-
-  const handleClick = (videoIdClickedOn) => {
-    setVideoId(videoIdClickedOn);
-    setVideos(getVideos(videoIdClickedOn));
-    setVideoDetails(getVideoDetails(videoIdClickedOn));
-  };
-
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <Hero video={videoDetails} />
-      <section className="dividing-container">
-        <Main video={videoDetails} />
-        <SideBar videos={videos} onClick={handleClick} />
-      </section>
-    </>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/:videoId" element={<HomePage />} />
+        <Route />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

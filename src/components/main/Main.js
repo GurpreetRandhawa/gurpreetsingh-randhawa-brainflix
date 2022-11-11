@@ -2,8 +2,24 @@ import "./Main.scss";
 import eye from "../../assets/Icons/views.svg";
 import heart from "../../assets/Icons/likes.svg";
 import comment from "../../assets/Icons/add_comment.svg";
+import { useEffect, useState } from "react";
+import { API_URL, API_KEY } from "../../utils/api";
+import axios from "axios";
 
-export default function Main({ video }) {
+export default function Main({ videoId }) {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  useEffect(() => {
+    if (!videoId) return;
+
+    axios.get(API_URL + "/videos/" + videoId + API_KEY).then((response) => {
+      setSelectedVideo(response.data);
+    });
+  }, [videoId]);
+
+  if (!selectedVideo) {
+    return <div>Loading</div>;
+  }
   const getTimeFull = (d) => {
     const da = new Date(d);
     const year = da.getFullYear();
@@ -14,26 +30,28 @@ export default function Main({ video }) {
 
   return (
     <section className="mainCon">
-      <div className="mainCon__title">{video.title}</div>
+      <div className="mainCon__title">{selectedVideo.title}</div>
       <div className="mainCon__videoInfo">
         <div className="mainCon__author-time">
-          <div className="mainCon__author">By {video.channel}</div>
-          <div className="mainCon__time">{getTimeFull(video.timestamp)}</div>
+          <div className="mainCon__author">By {selectedVideo.channel}</div>
+          <div className="mainCon__time">
+            {getTimeFull(selectedVideo.timestamp)}
+          </div>
         </div>
         <div className="mainCon__views-likes">
           <div className="mainCon__views-icon">
             <img className="mainCon__views" src={eye} alt="" />
-            {video.views}
+            {selectedVideo.views}
           </div>
           <div className="mainCon__likes-icon">
             <img className="mainCon__likes" src={heart} alt="" />
-            {video.likes}
+            {selectedVideo.likes}
           </div>
         </div>
       </div>
-      <div className="mainCon__descrip">{video.description}</div>
+      <div className="mainCon__descrip">{selectedVideo.description}</div>
       <div className="mainCon__total-comments">
-        {video.comments.length} Comments
+        {selectedVideo.comments.length} Comments
       </div>
       <div className="mainCon__comment-box">
         <div className="mainCon__comment-icon"></div>
@@ -53,9 +71,9 @@ export default function Main({ video }) {
         </div>
       </div>
 
-      {video.comments.length > 0 ? (
+      {selectedVideo.comments.length > 0 ? (
         <div>
-          {video.comments.map((comment) => (
+          {selectedVideo.comments.map((comment) => (
             <section className="mainCon__comm-list" key={comment.id}>
               <div className="mainCon__blank-image"></div>
               <div className="mainCon__text-right">

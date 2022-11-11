@@ -1,14 +1,10 @@
 import "./SideBar.scss";
-export default function Sidebar({ videos, onClick }) {
+export default function Sidebar({ videos }) {
   return (
     <section className="videoList">
       <div className="videoList__title">NEXT VIDEOS</div>
       {videos.map((video) => (
-        <div
-          className="videoList__list"
-          key={video.id}
-          onClick={(event) => onClick(video.id)}
-        >
+        <div className="videoList__list" key={video.id}>
           <div className="videoList__image-container">
             <img className="videoList__image" src={video.image} alt="" />
           </div>
