@@ -25,14 +25,15 @@ export default function Header() {
           <div className="header__search-mohan"></div>
         </div>
         <div className="header__uploadbar">
-          <div className="header__upload">
+          <Link to="/upload" className="header__upload">
             <img
               className="header__upload-icon"
               src={upload}
               alt="Upload Icon"
             />
             <h4 className="header__upload-text">UPLOAD</h4>
-          </div>
+          </Link>
+
           <div className="header__upload-mohan"></div>
         </div>
       </header>

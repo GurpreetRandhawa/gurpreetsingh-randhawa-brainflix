@@ -41,11 +41,11 @@ export default function Main({ videoId }) {
         <div className="mainCon__views-likes">
           <div className="mainCon__views-icon">
             <img className="mainCon__views" src={eye} alt="" />
-            {selectedVideo.views}
+            <p className="mainCon__views-text">{selectedVideo.views}</p>
           </div>
           <div className="mainCon__likes-icon">
             <img className="mainCon__likes" src={heart} alt="" />
-            {selectedVideo.likes}
+            <p className="mainCon__likes-text">{selectedVideo.likes}</p>
           </div>
         </div>
       </div>

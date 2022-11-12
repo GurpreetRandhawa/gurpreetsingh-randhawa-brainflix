@@ -63,6 +63,7 @@
   }
   &__views-likes {
     padding-right: 3rem;
+
     @include medium {
       display: flex;
       width: 30%;
@@ -74,6 +75,8 @@
     }
   }
   &__views-icon {
+    display: flex;
+    align-items: flex-start;
     @include mobile-subHeader;
     color: colors.$Secondary-TextColor;
     padding-bottom: 1rem;
@@ -85,8 +88,14 @@
   }
   &__views {
     padding-right: 0.5rem;
+    padding-top: 0.1rem;
+  }
+  &__views-text {
+    margin: 0;
   }
   &__likes-icon {
+    display: flex;
+    align-items: flex-start;
     @include mobile-subHeader;
     color: colors.$Secondary-TextColor;
 
@@ -96,6 +105,10 @@
   }
   &__likes {
     padding-right: 0.5rem;
+    padding-top: 0.1rem;
+  }
+  &__likes-text {
+    margin: 0;
   }
   &__descrip {
     padding-top: 1rem;
