@@ -1,0 +1,194 @@
+@use "../../styles/partials/colors" as colors;
+@use "../../styles/partials/fonts";
+@import "../../styles/partials/breakpoints";
+@import "../../styles/partials/mixins";
+
+.upload {
+  margin: 0 1rem;
+
+  @include medium {
+    margin: 0 1.5rem;
+  }
+  @include large {
+    margin: 0 5rem;
+  }
+  &__title {
+    @include mobile-pageHeader;
+    color: colors.$Primary-TextColor;
+    padding: 1.5rem 0;
+    margin: 0;
+    @include medium {
+      padding: 2.25rem 0;
+      border-bottom: 1px solid colors.$Divider-LineColor;
+      @include td-pageHeader;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+
+    @include large {
+      flex-direction: row;
+    }
+  }
+  &__side-left {
+    @include large {
+      width: 40%;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid colors.$Divider-LineColor;
+    }
+  }
+  &__side-title {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    @include mobile-subHeader;
+    color: colors.$Secondary-TextColor;
+
+    @include medium {
+      @include td-subHeader;
+      margin-top: 2.25rem;
+      margin-bottom: 0.25rem;
+    }
+    @include large {
+      margin-top: 1.5rem;
+    }
+  }
+  &__side-container {
+    width: 100%;
+    @include medium {
+      width: 50%;
+    }
+    @include large {
+      width: 95%;
+      height: 68%;
+    }
+  }
+  &__side-thumbnail {
+    width: 100%;
+    border-radius: 0.25rem;
+    @include large {
+      height: 100%;
+    }
+  }
+  &__side-right {
+    margin: 1rem 0;
+    @include medium {
+      margin: 1.5rem 0;
+      border-bottom: 1px solid colors.$Divider-LineColor;
+    }
+  }
+  &__label {
+    color: colors.$Secondary-TextColor;
+    @include mobile-subHeader;
+
+    @include medium {
+      @include td-subHeader;
+    }
+  }
+  &__input {
+    background-color: colors.$Form-fieldBackground;
+    border: 1px solid colors.$Divider-LineColor;
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 0.25rem;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    &::placeholder {
+      color: colors.$Video-playerComponents;
+      @include mobile-body;
+
+      @include medium {
+        @include td-body;
+      }
+    }
+    @include medium {
+      width: 100%;
+      height: 2.5rem;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+    }
+  }
+  &__textarea {
+    background-color: colors.$Form-fieldBackground;
+    border: 1px solid colors.$Divider-LineColor;
+    width: 100%;
+    height: 5rem;
+    margin-top: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    &::placeholder {
+      color: colors.$Video-playerComponents;
+      @include mobile-body;
+
+      @include medium {
+        @include td-body;
+      }
+    }
+    @include medium {
+      width: 100%;
+      height: 6rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    @include medium {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+  &__publish {
+    color: colors.$Background-Color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
+    background-color: colors.$Primary-CtaColor;
+    border-radius: 0.25rem;
+
+    @include medium {
+      width: 25%;
+      order: 2;
+      height: 2.5rem;
+    }
+  }
+  &__publish-button {
+    position: absolute;
+    left: 1rem;
+  }
+  &__publish-text {
+    @include mobile-subHeader;
+  }
+  &__cancel {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1rem;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.25rem;
+    text-decoration: none;
+
+    @include medium {
+      margin-top: 0;
+      width: 25%;
+    }
+  }
+  &__cancel-text {
+    @include mobile-subHeader;
+    color: colors.$Primary-CtaColor;
+  }
+}

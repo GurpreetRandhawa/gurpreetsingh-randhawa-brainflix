@@ -12,9 +12,12 @@ export default function Main({ videoId }) {
   useEffect(() => {
     if (!videoId) return;
 
-    axios.get(API_URL + "/videos/" + videoId + API_KEY).then((response) => {
-      setSelectedVideo(response.data);
-    });
+    axios
+      .get(API_URL + "/videos/" + videoId + API_KEY)
+      .then((response) => {
+        setSelectedVideo(response.data);
+      })
+      .catch((err) => console.log(err));
   }, [videoId]);
 
   if (!selectedVideo) {
