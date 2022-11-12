@@ -26,7 +26,7 @@ export default function Hero({ videoId }) {
   return (
     <section className="hero">
       <video className="hero__video-player" poster={selectedVideo.image}>
-        <source src={selectedVideo.video} type="video/mp4" />
+        <source src={""} type="video/mp4" />
       </video>
       <div className="hero__video-controls">
         <div className="hero__play">

@@ -145,6 +145,7 @@
     }
   }
   &__publish {
+    cursor: pointer;
     color: colors.$Background-Color;
     display: flex;
     align-items: center;
@@ -155,6 +156,10 @@
     width: 100%;
     background-color: colors.$Primary-CtaColor;
     border-radius: 0.25rem;
+
+    &:hover {
+      background-color: colors.$Cta-hover;
+    }
 
     @include medium {
       width: 25%;
@@ -190,5 +195,8 @@
   &__cancel-text {
     @include mobile-subHeader;
     color: colors.$Primary-CtaColor;
+    &:hover {
+      color: colors.$Cta-hover;
+    }
   }
 }

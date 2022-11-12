@@ -14,9 +14,12 @@ function HomePage() {
   const videoToDisplay = videoId || defaultVideoId;
 
   useEffect(() => {
-    axios.get(API_URL + "/videos" + API_KEY).then((response) => {
-      setVideos(response.data);
-    });
+    axios
+      .get(API_URL + "/videos" + API_KEY)
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   const filteredVideos = videos.filter((video) => video.id !== videoToDisplay);

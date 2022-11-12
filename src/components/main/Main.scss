@@ -209,6 +209,9 @@
     color: colors.$Background-Color;
     padding: 0 2rem;
     @include mobile-labels;
+    &:hover {
+      background-color: colors.$Cta-hover;
+    }
 
     @include medium {
       width: 25%;

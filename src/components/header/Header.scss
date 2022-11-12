@@ -107,6 +107,9 @@
     width: 100%;
     background-color: colors.$Primary-CtaColor;
     border-radius: 0.25rem;
+    &:hover {
+      background-color: colors.$Cta-hover;
+    }
 
     @include medium {
       width: 75%;
