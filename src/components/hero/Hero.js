@@ -27,7 +27,10 @@ export default function Hero({ videoId }) {
   }
   return (
     <section className="hero">
-      <video className="hero__video-player" poster={selectedVideo[0].image}>
+      <video
+        className="hero__video-player"
+        poster={`${BACK_END}/images/${selectedVideo.image}`}
+      >
         <source src={""} type="video/mp4" />
       </video>
       <div className="hero__video-controls">
@@ -36,7 +39,7 @@ export default function Hero({ videoId }) {
         </div>
         <div className="hero__bar">
           <div className="hero__bar-progress"></div>
-          <div className="hero__bar-time">0:00/{selectedVideo[0].duration}</div>
+          <div className="hero__bar-time">0:00/{selectedVideo.duration}</div>
         </div>
         <div className="hero__controls">
           <img className="hero__controls-screen" src={fullscreen} alt="" />
