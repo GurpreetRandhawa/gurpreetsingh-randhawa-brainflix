@@ -5,7 +5,8 @@ import SideBar from "../../components/side-bar/SideBar";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { API_URL, API_KEY } from "../../utils/api";
+//BACKEND
+const BACK_END = process.env.REACT_APP_BACKEND_URL;
 
 function HomePage() {
   const [videos, setVideos] = useState([]);
@@ -15,7 +16,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(API_URL + "/videos" + API_KEY)
+      .get(BACK_END + "/videos")
       .then((response) => {
         setVideos(response.data);
       })

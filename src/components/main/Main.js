@@ -3,8 +3,10 @@ import eye from "../../assets/Icons/views.svg";
 import heart from "../../assets/Icons/likes.svg";
 import comment from "../../assets/Icons/add_comment.svg";
 import { useEffect, useState } from "react";
-import { API_URL, API_KEY } from "../../utils/api";
 import axios from "axios";
+
+// const BACK_END = "http://localhost:8080";
+const BACK_END = process.env.REACT_APP_BACKEND_URL;
 
 export default function Main({ videoId }) {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -13,7 +15,7 @@ export default function Main({ videoId }) {
     if (!videoId) return;
 
     axios
-      .get(API_URL + "/videos/" + videoId + API_KEY)
+      .get(BACK_END + "/videos/" + videoId)
       .then((response) => {
         setSelectedVideo(response.data);
       })
@@ -23,6 +25,7 @@ export default function Main({ videoId }) {
   if (!selectedVideo) {
     return <div>Loading</div>;
   }
+
   const getTimeFull = (d) => {
     const da = new Date(d);
     const year = da.getFullYear();
@@ -33,28 +36,28 @@ export default function Main({ videoId }) {
 
   return (
     <section className="mainCon">
-      <div className="mainCon__title">{selectedVideo.title}</div>
+      <div className="mainCon__title">{selectedVideo[0].title}</div>
       <div className="mainCon__videoInfo">
         <div className="mainCon__author-time">
-          <div className="mainCon__author">By {selectedVideo.channel}</div>
+          <div className="mainCon__author">By {selectedVideo[0].channel}</div>
           <div className="mainCon__time">
-            {getTimeFull(selectedVideo.timestamp)}
+            {getTimeFull(selectedVideo[0].timestamp)}
           </div>
         </div>
         <div className="mainCon__views-likes">
           <div className="mainCon__views-icon">
             <img className="mainCon__views" src={eye} alt="" />
-            <p className="mainCon__views-text">{selectedVideo.views}</p>
+            <p className="mainCon__views-text">{selectedVideo[0].views}</p>
           </div>
           <div className="mainCon__likes-icon">
             <img className="mainCon__likes" src={heart} alt="" />
-            <p className="mainCon__likes-text">{selectedVideo.likes}</p>
+            <p className="mainCon__likes-text">{selectedVideo[0].likes}</p>
           </div>
         </div>
       </div>
       <div className="mainCon__descrip">{selectedVideo.description}</div>
       <div className="mainCon__total-comments">
-        {selectedVideo.comments.length} Comments
+        {selectedVideo[0].comments.length} Comments
       </div>
       <div className="mainCon__comment-box">
         <div className="mainCon__comment-icon"></div>
@@ -74,9 +77,9 @@ export default function Main({ videoId }) {
         </div>
       </div>
 
-      {selectedVideo.comments.length > 0 ? (
+      {selectedVideo[0].comments.length > 0 ? (
         <div>
-          {selectedVideo.comments.map((comment) => (
+          {selectedVideo[0].comments.map((comment) => (
             <section className="mainCon__comm-list" key={comment.id}>
               <div className="mainCon__blank-image"></div>
               <div className="mainCon__text-right">

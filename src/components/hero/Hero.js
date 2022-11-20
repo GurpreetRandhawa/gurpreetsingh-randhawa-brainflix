@@ -3,8 +3,10 @@ import fullscreen from "../../assets/Icons/fullscreen.svg";
 import play from "../../assets/Icons/play.svg";
 import volume from "../../assets/Icons/volume_up.svg";
 import { useEffect, useState } from "react";
-import { API_URL, API_KEY } from "../../utils/api";
 import axios from "axios";
+
+// const BACK_END = "http://localhost:8080";
+const BACK_END = process.env.REACT_APP_BACKEND_URL;
 
 export default function Hero({ videoId }) {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -13,7 +15,7 @@ export default function Hero({ videoId }) {
     if (!videoId) return;
 
     axios
-      .get(API_URL + "/videos/" + videoId + API_KEY)
+      .get(BACK_END + "/videos/" + videoId)
       .then((response) => {
         setSelectedVideo(response.data);
       })
@@ -25,7 +27,7 @@ export default function Hero({ videoId }) {
   }
   return (
     <section className="hero">
-      <video className="hero__video-player" poster={selectedVideo.image}>
+      <video className="hero__video-player" poster={selectedVideo[0].image}>
         <source src={""} type="video/mp4" />
       </video>
       <div className="hero__video-controls">
@@ -34,7 +36,7 @@ export default function Hero({ videoId }) {
         </div>
         <div className="hero__bar">
           <div className="hero__bar-progress"></div>
-          <div className="hero__bar-time">0:00/{selectedVideo.duration}</div>
+          <div className="hero__bar-time">0:00/{selectedVideo[0].duration}</div>
         </div>
         <div className="hero__controls">
           <img className="hero__controls-screen" src={fullscreen} alt="" />
