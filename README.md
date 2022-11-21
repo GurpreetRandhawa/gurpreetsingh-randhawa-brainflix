@@ -2,4 +2,4 @@
 
 ### `npm i` in the root folder
 
-### To run the server, execute - `npm start`
+### To run the react project, execute - `npm start`
