@@ -5,7 +5,7 @@ import volume from "../../assets/Icons/volume_up.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// const BACK_END = "http://localhost:8080";
+// const BACK_END
 const BACK_END = process.env.REACT_APP_BACKEND_URL;
 
 export default function Hero({ videoId }) {
