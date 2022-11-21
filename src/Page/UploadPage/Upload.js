@@ -3,26 +3,43 @@ import publish from "../../assets/Icons/publish.svg";
 import { Link } from "react-router-dom";
 import upload from "../../assets/images/Upload-video-preview.jpg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Upload() {
   let input1 = null;
+  let flag1 = null;
   let input2 = null;
+  let flag2 = null;
   let navigate = useNavigate();
 
+  const BACK_END = process.env.REACT_APP_BACKEND_URL;
+
   const handleClick = (e) => {
-    if (input1 === true && input2 === true) {
-      window.alert("Video uploaded successfully");
-      navigate("/");
+    if (flag1 === true && flag2 === true) {
+      axios
+        .post(BACK_END + "/videos/", {
+          title: input1,
+          description: input2,
+        })
+        .then((res) => {
+          setTimeout(() => {
+            window.alert("Video uploaded successfully");
+            navigate("/");
+          }, 2000);
+        })
+        .catch((err) => console.log(err));
     } else {
       window.alert("Please enter details");
     }
   };
 
   const handleInputTitle = (event) => {
-    input1 = event.target.value && true;
+    flag1 = event.target.value && true;
+    input1 = event.target.value;
   };
   const handleInputDes = (event) => {
-    input2 = event.target.value && true;
+    flag2 = event.target.value && true;
+    input2 = event.target.value;
   };
   return (
     <section className="upload">

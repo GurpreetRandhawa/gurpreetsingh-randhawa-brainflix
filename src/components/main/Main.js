@@ -64,11 +64,11 @@ export default function Main({ videoId }) {
         <div className="mainCon__comment-form">
           <div className="mainCon__input">
             <div className="mainCon__label">JOIN THE CONVERSATION</div>
-            <input
+            <textarea
               className="mainCon__input-box"
               type="text"
               placeholder="Add a new comment"
-            ></input>
+            ></textarea>
           </div>
           <button className="mainCon__com-button">
             <img className="mainCon__button-image" src={comment} alt="" />
