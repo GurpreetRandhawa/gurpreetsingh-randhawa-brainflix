@@ -55,10 +55,10 @@
   }
   &__time {
     color: colors.$Secondary-TextColor;
-    @include mobile-subHeader;
+    @include mobile-body;
 
     @include medium {
-      @include td-subHeader;
+      @include td-body;
     }
   }
   &__views-likes {
@@ -77,12 +77,12 @@
   &__views-icon {
     display: flex;
     align-items: flex-start;
-    @include mobile-subHeader;
+    @include mobile-body;
     color: colors.$Secondary-TextColor;
     padding-bottom: 1rem;
 
     @include medium {
-      @include td-subHeader;
+      @include td-body;
       padding-bottom: 0;
     }
   }
@@ -91,16 +91,20 @@
     padding-top: 0.2rem;
   }
   &__views-text {
+    padding-top: 0.2rem;
     margin: 0;
+    @include medium {
+      padding-top: 0;
+    }
   }
   &__likes-icon {
     display: flex;
     align-items: flex-start;
-    @include mobile-subHeader;
+    @include mobile-body;
     color: colors.$Secondary-TextColor;
 
     @include medium {
-      @include td-subHeader;
+      @include td-body;
     }
   }
   &__likes {
@@ -108,7 +112,11 @@
     padding-top: 0.19rem;
   }
   &__likes-text {
+    padding-top: 0.2rem;
     margin: 0;
+    @include medium {
+      padding-top: 0;
+    }
   }
   &__descrip {
     padding-top: 1rem;
